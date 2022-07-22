@@ -1,3 +1,5 @@
+import 'package:bytebank/screens/contacts-list.dart';
+import 'package:bytebank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,16 +11,17 @@ class ByteBankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Dashboard'),
-        ),
-        body: Column(
-          children: <Widget>[
-            Image.asset('images/bytebank_logo.png'),
-          ],
-        ),
+      theme: ThemeData(
+        primaryColor: Colors.green[900],
+      ).copyWith(
+        colorScheme: ThemeData().colorScheme.copyWith(
+              primary: Colors.green[900],
+              onPrimary: Colors.white,
+              secondary: Colors.blueAccent[700],
+              onSecondary: Colors.white,
+            ),
       ),
+      home: ContactList(),
     );
   }
 }
